@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); margin: 50% auto; }
+
+body{
+  background-color: #2E4374;
+}
+
+h1{
+  text-align: center;
+  /* color: #FF6969; */
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+  background: #123;
+  height: 198px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.container p{
+  text-align: center;
+}
+
+.container button{
+  width: 11%;
+    height: 30px;
+    margin: 36px 477px;
+    border-radius: 10px;
+    border: 0;
+    transition: 0.5s;
+}
+
+.container button:hover{
+  background-color: #123;
+  color: #fff;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Sign-up form start -Register-->
+
+  <div class="container">
+    <h1>Hello</h1>
+    <p></p>
+    <button class="btn">subscrib</button>
+  </div>
+
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+  <!-- Success message end -->
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+
+  <script>
+
+    let btn = document.querySelector('.btn');
+    let container = document.querySelector('.container p');
+    console.log(container);
+    btn.onclick = () => {
+      if(localStorage.getItem("username")){
+        let name = localStorage.getItem("username");
+        container.innerHTML=`Hello ${name}! thanks for subscribing`;
+      }
+      else{
+        window.location= 'signin.html'
+      }
+    }
+
+  </script>
+
+
+</body>
+</html>

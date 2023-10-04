@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution { font-size: 11px; text-align: center; }
+        .attribution a { color: hsl(228, 45%, 44%); }
+
+        
+
+        body{
+            background-color: #2E4374;
+        }
+        
+        .log{
+            display: block;
+            background-color: #4B527E;
+            height: 270px;
+            width: 700px;
+            padding: 31px;
+            margin: 109px auto;
+            border-radius: 10px;
+        }
+        
+        .log h1{
+            text-align: center;
+            /* color: #FF6969; */
+        }
+        
+        label{
+            color: #DAC0A3;
+        }
+        
+        label i{
+            color: #E5C3A6;
+        }
+        
+        .log input{
+            width: 80%;
+            height: 30px;
+            margin: 5px 0 ;
+            outline: none;
+            border: none;
+            border-radius: 12px;
+            padding: 5px;
+        }
+        
+        .log input[type="email"]{
+            margin: 22px 28px;
+        }
+        
+        .log p{
+            text-align: center;
+            margin: -9px;
+        }
+        
+        p a{
+            color: #E5C3A6;
+        }
+        
+        .log button{
+            width: 80%;
+            margin: 20px 88px;
+            height: 35px;
+            border-radius: 50px;
+            border: 0;
+            background-color: #123;
+            color: #4d5c81;
+            transition: 0.5s;
+        }
+        
+        .log button:hover{
+            background-color: #2E4374;
+            color: rgb(255, 255, 255);
+            letter-spacing: 1.2px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sign-up form start -Register-->
+
+    <section class="container">
+
+        <div class="log">
+            <h1>Login User</h1>
+            <label>Email <i class="fa-solid fa-envelope"></i></label>
+            <input type="email" placeholder="Enter your Email.." id="useremail"/>
+
+            <label>Password <i class="fa-solid fa-lock"></i></label>
+            <input type="password" placeholder="Enter your Password.." id="userpassword"/>
+            <button class="submit"id="submit" >SIGN IN</button>
+            <p>Not Have Account <a href="register.html">Register</a></p>
+        </div>
+        
+
+    </section>
+
+    <!-- Success message end -->
+    
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">khaled</a>.
+    </div>
+
+
+        <script>
+
+            
+    //Variables
+
+    let useremail = document.getElementById("useremail");
+    let userpassword = document.getElementById("userpassword");
+    let submit= document.getElementById("submit");
+
+    let email= localStorage.getItem('email');
+    let password= localStorage.getItem('password');
+
+    //Event
+    submit.addEventListener('click', login);
+
+    //function
+
+    function login(e){
+        e.preventDefault();
+        
+        if(useremail.value ==='' || userpassword===''){
+            alert("Please Fill Data");
+        }else{
+            if(useremail.value=== email && userpassword.value===password){
+                setTimeout(()=> {
+                    window.location="index.html";
+                },1500)
+            }
+            else{
+                alert("Email Or Password Is Wrong")
+            }
+        }
+    }
+            
+        </script>
+
+</body>
+</html>

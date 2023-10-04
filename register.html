@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    
+
+body{
+    background-color: #2E4374;
+}
+
+.out{
+    display: block;
+    background-color: #4B527E;
+    height: 290px;
+    width: 700px;
+    padding: 31px;
+    margin: 109px auto;
+    border-radius: 10px;
+}
+
+.out h1{
+    text-align: center;
+    /* color: #FF6969; */
+}
+
+.out input{
+    width: 80%;
+    height: 30px;
+    margin: 15px 11px;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+label{
+    color: #DAC0A3;
+}
+
+label i{
+    color: #E5C3A6;
+}
+
+.out input[type="email"]{
+    margin: 0 32px;
+}
+
+.out input[type="text"]{
+    margin: 15px 29px;
+}
+
+.out p{
+    text-align: center;
+    margin: 11px 0;
+}
+
+.out p a{
+    color: #E5C3A6;
+}
+
+button{
+    width: 80%;
+    margin: 0 97px;
+    height: 32px;
+    border: 0;
+    border-radius: 50px;
+    transition: 0.5s;
+    background-color: #123;
+    color: #4d5c81;
+}
+
+button:hover{
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    background-color: #2E4374;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1.2px;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+    
+
+
+    <!-- Sign-up form end -->
+
+    <section class="container">
+        <div class="out">
+            <h1>Register User</h1>
+            <label>Name <i class="fa-solid fa-user"></i></label>
+            <input type="text" placeholder="Enter your name.." id="username"/>
+    
+            <label>Email <i class="fa-solid fa-envelope"></i></label>
+            <input type="email" placeholder="Enter your Email.." id="useremail"/>
+    
+            <label>Password <i class="fa-solid fa-lock"></i></label>
+            <input type="password" placeholder="Enter your Password.." id="userpassword"/>
+            <button class="submit" id="submit" >SIGN IN</button>
+            <p>Have Account <a href="signin.html">Log In</a> </p>
+        </div>
+    </section>
+
+
+    <!-- Success message start -->
+
+    <!-- Success message end -->
+    
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+
+    <script>
+
+        
+    // variables
+
+    let username= document.getElementById('username');
+    let useremail = document.getElementById('useremail');
+    let userpassword = document.getElementById('userpassword');
+    let submit = document.getElementById('submit');
+
+    // console.log(username.value);
+
+    submit.addEventListener('click', register);
+
+    function register(e){
+        e.preventDefault()  // بوقف التحميل بتاع الصفحه 
+        if(username.value==="" || useremail.value==="" || userpassword.value===""){
+            alert("Please Fill Data")
+        }
+        else{
+
+            localStorage.setItem("username", username.value)
+            localStorage.setItem("email", useremail.value)
+            localStorage.setItem("password", userpassword.value)
+
+            setTimeout( ()=> {   //كدا هيعد ثانيه ونص وبعد كدا للصفحه الرئيسيه
+                window.location="signin.html";
+            },1500)
+        }
+    }
+            
+
+    </script>
+
+
+</body>
+</html>
